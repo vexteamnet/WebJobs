@@ -16,5 +16,11 @@ namespace Download
         {
             log.WriteLine(message);
         }
+
+        public async static Task DownloadAll([QueueTrigger("downloadallrequest")] string message)
+        {
+            var teams = await Models.VexDb.Downloader.Download<Models.VexDb.Team>("http://api.vex.us.nallen.me/get_teams?region=Indiana");
+            return;
+        }
     }
 }

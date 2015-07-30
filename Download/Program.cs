@@ -14,9 +14,11 @@ namespace Download
         // AzureWebJobsDashboard and AzureWebJobsStorage
         static void Main()
         {
-            var host = new JobHost();
+            var task = Task.Run(() => Functions.DownloadAll(null));
+            task.Wait();
+            //var host = new JobHost();
             // The following code ensures that the WebJob will be running continuously
-            host.RunAndBlock();
+            //host.RunAndBlock();
         }
     }
 }
