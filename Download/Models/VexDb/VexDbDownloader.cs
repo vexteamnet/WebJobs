@@ -13,7 +13,7 @@ namespace Download.Models.VexDb
 {
     public static class Downloader
     {
-        public static async Task<IList<T>> Download<T>(string url)
+        public static async Task<ICollection<T>> Download<T>(string url)
         {
 #if DEBUG
             Debug.WriteLine($"Request is: {url}");
