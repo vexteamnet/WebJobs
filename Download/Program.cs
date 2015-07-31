@@ -15,7 +15,7 @@ namespace Download
         static void Main()
         {
             var task = Task.Run(() => Functions.DownloadAll(null));
-            task.Wait();
+            task.Wait(System.Threading.Timeout.Infinite);
             //var host = new JobHost();
             // The following code ensures that the WebJob will be running continuously
             //host.RunAndBlock();

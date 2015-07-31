@@ -99,10 +99,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\JsonBoolConverter.cs" />
-    <Compile Include="Models\VexDb\Enum.cs" />
+    <Compile Include="Models\Converters.cs" />
     <Compile Include="Models\VexDb\RootObject.cs" />
-    <Compile Include="Models\VexDb\Team.cs" />
     <Compile Include="Models\VexDb\VexDbDownloader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Functions.cs" />
