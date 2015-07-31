@@ -15,11 +15,14 @@ namespace Download.Models.VexDb
     {
         public static async Task<ICollection<T>> Download<T>(string url)
         {
+            if (!url.Contains("?"))
+                url += "?";
+
 #if DEBUG
             Debug.WriteLine($"Request is: {url}");
 #endif
             int downloadIterations = 1; // number of iterations required
-            const int downloadSize = 200; // number of T to be downloaded per request
+            const int downloadSize = 500; // number of T to be downloaded per request
 
             WebClient client = new WebClient();
 
